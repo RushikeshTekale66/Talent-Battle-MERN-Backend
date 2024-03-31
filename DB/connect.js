@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-const url = "mongodb://127.0.0.1:27017/TalentBattle";
+const DatabaseUrl = process.env.DatabaseUrl;
+
+const url = DatabaseUrl;
 
 mongoose.connect(url).then(()=>console.log("Connected to database")).catch((e)=>console.log("Error : ", e));
