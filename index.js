@@ -39,11 +39,8 @@ app.get('/sendDataToApi', (req, res) => {
 
 // Get all data from database
 app.get('/getalldata', async (req, res) => {
-    let result = await ProductData.find();
+    let result = await ProductData.find().sort({id:1});
     res.send(result);
-    for (let i = 0; i < result.length; i++) {
-        console.log(result[i].category);
-    }
 })
 
 // Search api 
